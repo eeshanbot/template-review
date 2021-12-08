@@ -1,36 +1,50 @@
 \usepackage[includeheadfoot,top=20mm, bottom=20mm, footskip=2.5cm]{geometry}
 
-% Typography
+% TYPOGRAPHY
 \usepackage{cmbright}
 \usepackage{amssymb,amsmath}
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
 
-% Misc
+% MISC
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref} %textopdfstring from pandoc
 \usepackage{soul} % Highlight using \hl{}
 
-% Table
+% TABLE
 
 \usepackage{adjustbox} % center large tables across textwidth by surrounding tabular with \begin{adjustbox}{center}
 \renewcommand{\arraystretch}{1.5} % enlarge spacing between rows
 \usepackage{caption} 
 \captionsetup[table]{skip=10pt} % enlarge spacing between caption and table
 
-% Section styles
+%% SECTION STYLES
 
 \usepackage{titlesec}
-\titleformat{\section}{\normalfont\large}{\makebox[0pt][r]{\bf \thesection.\hspace{4mm}}}{0em}{\bfseries}
+
+% section
+\titleformat{\section}{\pagebreak \normalfont\LARGE}{\makebox[0pt][r]{\bf \thesection.\hspace{4mm}}}{0em}{\bfseries}
+%\titleformat*{\section}{\pagebreak \LARGE\bfseries}
+
+% subsection
+
 \titleformat{\subsection}{\normalfont}{\makebox[0pt][r]{\bf \thesubsection.\hspace{4mm}}}{0em}{\bfseries}
 \titlespacing{\subsection}{0em}{1em}{-0.3em} % left before after
+\titleformat*{\subsection}{\large\bfseries}
+\titlespacing*{\subsection}
+{0em}{1em}{1em}
 
-% Paragraph styles
+% subsubsection
+\titlespacing*{\subsubsection}
+{0em}{0.5em}{0.5em}
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsubsection}}
+
+%% PARAGRAPH STYLES
 
 \setlength{\parskip}{0.6\baselineskip}%
 \setlength{\parindent}{0pt}%
 
-% Quotation styles
+%% QUOTATION STYLES
 
 \usepackage{framed}
 \let\oldquote=\quote
@@ -48,13 +62,13 @@
   }
   {\end{minipage}\endMakeFramed}
 
-% Table styles
+%% TABLE STYLES
 
 \let\oldtabular=\tabular
 \let\endoldtabular=\endtabular
 \renewenvironment{tabular}[1]{\begin{adjustbox}{center}\begin{oldtabular}{#1}}{\end{oldtabular}\end{adjustbox}}
 
-%% Define Reviewer and Author Comments
+%% REVIEWER COMMENTS
 
 \usepackage{mdframed}
 \newmdenv[
@@ -65,9 +79,9 @@
 
 \newcommand{\ebline}[1]{
 	\begin{sideline}
-	%\begin{em}
+	\begin{em}
 	#1
-	%\end{em}
+	\end{em}
 	\end{sideline}
 }
 
@@ -76,18 +90,8 @@
 	\ebline{#2}
 }
 
-%% Section styles
-\titleformat*{\section}{\pagebreak \LARGE\bfseries}
-\titleformat*{\subsection}{\large\bfseries}
-\titlespacing*{\subsection}
-{0em}{1em}{1em}
-\titlespacing*{\subsubsection}
-{0em}{0.5em}{0.5em}
-\renewcommand\thesubsubsection{\arabic{subsubsection}}
-
-%%%
-%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
-%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+%%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%% DIF UNDERLINE PREAMBLE %DIF PREAMBLE
 \RequirePackage[normalem]{ulem} %DIF PREAMBLE
 \RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
 \providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
@@ -106,5 +110,19 @@
 \providecommand{\DIFdelendFL}{} %DIF PREAMBLE
 %DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 
-% for example
+%% RANDO TEXT FOR EXAMPLE
 \usepackage{lipsum}
+
+%% IF DOI IS EMPTY
+\usepackage{etoolbox}
+
+%% CROSS REFERENCE TO ORIGINAL DOCUMENT
+
+% if you just use cite
+% \usepackage{xr}
+% \externaldocument[v1-]{pathToDoc}
+% in doc, do \ref{v1-sec:intro}
+
+% if you use hyperref
+% \usepackage{xr-hyper}
+% \externaldocument[v1-]{pathToDoc}
