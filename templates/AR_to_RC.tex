@@ -3,7 +3,6 @@
 \providecommand{\papertitle}{Title}
 \providecommand{\authors}{Authors}
 \providecommand{\journal}{Journal}
-\providecommand{\doi}{--}
 
 \input{../templates/preamble.tex}
 
@@ -13,7 +12,7 @@
 {\Large\bf \lettertitle}\\[1em]
 {\huge \papertitle}\\[1em]
 {\authors}\\
-{\emph{\journal}}, \texttt{doi:\doi}\\
+{\emph{\journal}}\ifdefempty{\doi}{}{, \texttt{doi:\doi}}\\
 \hrule
 
 % Legend
