@@ -15,8 +15,8 @@
 # final PDF output
 
 all:
-	pdflatex trunk
-	pdflatex trunk
+	pdflatex trunk-review
+	pdflatex trunk-review
 
 
 clean:

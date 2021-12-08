@@ -15,8 +15,8 @@
 # final PDF output
 
 all:
-	pdflatex trunk
-	pdflatex trunk
+	pdflatex trunk-rebuttal
+	pdflatex trunk-rebuttal
 
 
 clean:
