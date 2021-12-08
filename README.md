@@ -1,5 +1,5 @@
 # Review and Response Letters
-Template for LaTeX to quickly write review and rebuttal letters 
+LaTeX template to quickly write beautifully formatted review and rebuttal letters 
 
 ## Additional features
 
