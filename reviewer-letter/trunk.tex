@@ -1,28 +1,41 @@
 \documentclass{article}
-	\def\papertitle{The Dark Side of Light}
-	\def\authors{A. Einstein}
-	\def\journal{Some Journal}
-	\def\doi{12345}
+	\def\papertitle{Making Dams All Day Every Day}
+	\def\authors{E. Beaver, H. Bee, S.N. Mole, S. Shrimp}
+	\def\journal{Muddy Charles}
+	\def\doi{3.1415}
 \input{../src/p-reviewer-letter.tex}
+
+\section{Summary}
+
+\lipsum[1-3]
 
 \section{General Comments}
 
-\subsection{Major concern \#1}
+\bigcomment{
+\lipsum[4-5]
+}
 
-\RC Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\bigcomment{
+\lipsum[6-8]
+}
 
 \section{Specific Comments}
+\label{sec:specific-comments}
 
-\subsection{Page 3 Lines 15-22}
+\subsubsection{}
+\label{com:noline}
+This specific comment does not have a line reference. So it gets entered as \texttt{$\backslash$subsubsection\{\}}. This is doable but unadvisable for a ``specific'' comment.
 
-\RC This is an awkward paragraph that I do not understand. Please elaborate.
+\lcomment{line 20}{There is a dead cat.}
+Please double check if the cat is alive.
+This specific comment takes question with particular phrasing and is entered as \texttt{$\backslash$reviewer\{location\}\{quote from manuscript\}}. 
 
-\subsection{Page 4 Line 55}
+\subsubsection{Figure 11}
+There is a typo in the title. This comment is so basic a quote is not necessary. Enter it like comment \ref{com:noline} but with a parameter.
 
-\begin{quote}
-The cat in the box is \hl{dead} by $5\sigma\pm\pi$.
-\end{quote}
+\section{Minor Edits}
 
-\RC I am convinced the cat is alive. Please double-check.
+This section should work the same as \cref{sec:specific-comments} but with a parameter.
+
 
 \end{document}
