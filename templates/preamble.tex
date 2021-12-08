@@ -1,9 +1,7 @@
 \usepackage[includeheadfoot,top=20mm, bottom=20mm, footskip=2.5cm]{geometry}
 
 % Typography
-\usepackage[T1]{fontenc}
-\usepackage{times}
-%\usepackage{mathptmx} % math also in times font
+\usepackage{cmbright}
 \usepackage{amssymb,amsmath}
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
@@ -56,23 +54,36 @@
 \let\endoldtabular=\endtabular
 \renewenvironment{tabular}[1]{\begin{adjustbox}{center}\begin{oldtabular}{#1}}{\end{oldtabular}\end{adjustbox}}
 
+%% Define Reviewer and Author Comments
 
-% Shortcuts
+\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false
+]{sideline}
 
-%% Let textbf be both, bold and italic
-%\DeclareTextFontCommand{\textbf}{\bfseries\em}
+\newcommand{\ebline}[1]{
+	\begin{sideline}
+	%\begin{em}
+	#1
+	%\end{em}
+	\end{sideline}
+}
 
-%% Add RC and AR to the left of a paragraph
-%\def\RC{\makebox[0pt][r]{\bf RC:\hspace{4mm}}}
-%\def\AR{\makebox[0pt][r]{AR:\hspace{4mm}}}
+\newcommand{\reviewer}[2]{
+	\subsubsection{#1}
+	\ebline{#2}
+}
 
-%% Define that \RC and \AR should start and format the whole paragraph 
-\usepackage{suffix}
-\long\def\RC#1\par{\makebox[0pt][r]{\bf RC:\hspace{4mm}}\textbf{\textit{#1}}\par} %\RC
-\WithSuffix\long\def\RC*#1\par{\textbf{\textit{#1}}\par} %\RC*
-\long\def\AR#1\par{\makebox[0pt][r]{AR:\hspace{10pt}}\textit{#1}\par} %\AR
-\WithSuffix\long\def\AR*#1\par{\textit{#1}\par} %\AR*
-
+%% Section styles
+\titleformat*{\section}{\pagebreak \LARGE\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titlespacing*{\subsection}
+{0em}{1em}{1em}
+\titlespacing*{\subsubsection}
+{0em}{0.5em}{0.5em}
+\renewcommand\thesubsubsection{\arabic{subsubsection}}
 
 %%%
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
@@ -80,7 +91,7 @@
 \RequirePackage[normalem]{ulem} %DIF PREAMBLE
 \RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
 \providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
-\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                     %DIF PREAMBLE
 %DIF SAFE PREAMBLE %DIF PREAMBLE
 \providecommand{\DIFaddbegin}{} %DIF PREAMBLE
 \providecommand{\DIFaddend}{} %DIF PREAMBLE
@@ -94,3 +105,6 @@
 \providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
 \providecommand{\DIFdelendFL}{} %DIF PREAMBLE
 %DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+% for example
+\usepackage{lipsum}
