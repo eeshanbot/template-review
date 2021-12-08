@@ -68,8 +68,9 @@
 \let\endoldtabular=\endtabular
 \renewenvironment{tabular}[1]{\begin{adjustbox}{center}\begin{oldtabular}{#1}}{\end{oldtabular}\end{adjustbox}}
 
-%% REVIEWER COMMENTS
+%% MACROS FOR FORMATTING NICELY
 
+% common
 \usepackage{mdframed}
 \newmdenv[
   topline=false,
@@ -85,9 +86,17 @@
 	\end{sideline}
 }
 
+% rebuttal-letter
 \newcommand{\reviewer}[2]{
 	\subsubsection{#1}
 	\ebline{#2}
+}
+
+% reviewer-letter
+\newcommand{\bigcomment}[1]{
+\subsection{}
+\vspace{-3em}
+#1
 }
 
 %%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
@@ -113,8 +122,13 @@
 %% RANDO TEXT FOR EXAMPLE
 \usepackage{lipsum}
 
-%% IF DOI IS EMPTY
+%% CHECKS IF THINGS ARE EMPTY
 \usepackage{etoolbox}
+
+%% NICE REFERENCING
+% must be loaded after hyperref
+% puts in section, fig, etc in front of comment
+\usepackage[capitalise]{cleveref}
 
 %% CROSS REFERENCE TO ORIGINAL DOCUMENT
 
