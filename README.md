@@ -1,12 +1,13 @@
 # Review and Response Letters
 LaTeX template to quickly write beautifully formatted review and rebuttal letters 
 
-## Additional features
+## Nice features
 
 - supports latexdiff commands
 - supports text highlighting with `\hl{}`
 - supports tables and figures
+- cross referencing from revising manuscript to rebuttal letter!!!!
 
 ## To Do List
 
-- enable cross referencing from revising manuscript document to rebuttal letter
+- happy to take suggestions
