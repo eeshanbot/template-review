@@ -5,6 +5,8 @@
 	\def\doi{3.1415}
 \input{../src/p-rebuttal-letter.tex}
 
+% -------- BEGIN REBUTTAL, GOOD LUCK ------- %%
+
 Dear Editors,
 
 We thank the reviewers and editor for their thoughtful feedback and comments in improving this work. The rebuttal letter is organized with sections delineated by the review, shown in the table of contents.
@@ -32,27 +34,36 @@ Dr. Eager Beaver \\
 
 \subsection*{Comments}
 
-\reviewer{Line 10}{\lipsum[3-4]}
-\label{sec:r1l10}
-\lipsum[5]
+\lreviewer{Line 12}{v1:1.1}
+{You say ``Duis eget orci sit amet orci dignissim rutrum''. Please check the grammar.}
+This is correct. We have not changed it.
 
-\reviewer{Line 50}{\lipsum[4-5]}
-\lipsum[6]
+Note that the first instance of Line 12 comes from the user manually copying it over from the reviewer.
+The second instance of 12 comes from the label \emph{in your draft revision}.
+This label should be set by you right after you read the review (most likely, this is a good use of your time, too).
+Your rebuttal letter will automatically keep track of where the changes you make end up being in the revised manuscript as long as you don't delete the original command: \texttt{$\backslash$llabel\{ tag \}}.
+
+If you need to put the line number directly in the text, you can use a custom macro \texttt{$\backslash$ref\{ prefix-tag \}}. 
+Please note that there will be a prefix added to your tag from the other document, which you can change in \texttt{$\backslash$externaldocument[prefix]\{ path to document \}} in \texttt{preamble.tex}.
+
+\lreviewer{Line 50}{}{This doesn't make any sense to me.}
+\label{sec:test}
+Notice that this uses the same macro, \texttt{$\backslash$lreviewer}, but leaves the second output blank.
 
 \section{Reviewer Two}
 
-\reviewer{Line 20}{\lipsum[7]}
+\lreviewer{Line 50}{}{This statement is confusing as written.}
 
-Thank you. We have changed this accordingly. This agrees with \ref{sec:r1l10}.
+Thank you. We have removed this accordingly. This agrees with Comment \ref{sec:test}.
 
-\begin{quote}
-The cat in the box is \DIFdelbegin \DIFdel{dead}\DIFdelend \DIFaddbegin \DIFadd{alive}\DIFaddend .
-\begin{align}
-E &= mc^2 \\
-m\cdot \DIFdelbegin \DIFdel{a=F}\DIFdelend \DIFaddbegin \DIFadd{v=p}\DIFaddend .
-\end{align}
-\end{quote}
+% \begin{quote}
+% The cat in the box is \DIFdelbegin \DIFdel{dead}\DIFdelend \DIFaddbegin \DIFadd{alive}\DIFaddend .
+% \begin{align}
+% E &= mc^2 \\
+% m\cdot \DIFdelbegin \DIFdel{a=F}\DIFdelend \DIFaddbegin \DIFadd{v=p}\DIFaddend .
+% \end{align}
+% \end{quote}
 
-\section{Editor Comments}
+% \section{Editor Comments}
 
 \end{document}

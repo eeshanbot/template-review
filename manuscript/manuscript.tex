@@ -1,0 +1,34 @@
+\documentclass{article}
+
+%% MINIMUM WORKING EXAMPLE
+
+%% PACKAGES
+
+% linenumbers
+\usepackage{lineno}
+\linenumbers
+
+% hyperlinking and cross referencing
+% needs to be loaded IN THIS ORDER 
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true]{hyperref}
+
+% for random text
+\usepackage{lipsum}
+
+\newcommand{\llabel}[1]{\hypertarget{llineno:#1}{\linelabel{#1}}}
+\newcommand{\lref}[1]{\hyperlink{llineno:#1}{\ref*{#1}}}
+
+\begin{document}
+
+\lipsum[1]
+\llabel{1.1}
+
+\section*{Background}
+\lipsum[2-4]
+\llabel{2.2}
+
+\section*{Methods}
+\lipsum[5-8]
+
+\end{document}
