@@ -52,11 +52,13 @@ Notice that this uses the same macro, \texttt{$\backslash$lreviewer}, but leaves
 
 \section{Reviewer Two}
 
-\lreviewer{Line 50}{}{This statement is confusing as written.}
+\reviewer{Line 50}{This statement is confusing as written.}
 
 Thank you. We have removed this accordingly. This agrees with Comment \ref{sec:test}.
 
-\lreviewer{Line 99}{}{Please check Schrodinger's cat.}
+This was written with the macro, \texttt{$\backslash$reviewer}, that only takes two inputs, i.e. it does not offer any line tracking.
+
+\reviewer{Line 99}{Please check Schrodinger's cat.}
 
 \begin{quote}
 The cat in the box is \DIFdelbegin \DIFdel{dead}\DIFdelend \DIFaddbegin \DIFadd{alive}\DIFaddend .
@@ -65,5 +67,7 @@ E &= mc^2 \\
 m\cdot \DIFdelbegin \DIFdel{a=F}\DIFdelend \DIFaddbegin \DIFadd{v=p}\DIFaddend .
 \end{align}
 \end{quote}
+
+You can use the \texttt{quote} and \texttt{latexdiff} packages to format changes to the text like this as well. 
 
 \end{document}
