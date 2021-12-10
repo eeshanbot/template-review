@@ -43,12 +43,12 @@ The second instance of 12 comes from the label \emph{in your draft revision}.
 This label should be set by you right after you read the review (most likely, this is a good use of your time, too).
 Your rebuttal letter will automatically keep track of where the changes you make end up being in the revised manuscript as long as you don't delete the original command: \texttt{$\backslash$llabel\{ tag \}}.
 
-If you need to put the line number directly in the text, you can use a custom macro \texttt{$\backslash$ref\{ prefix-tag \}}. 
+If you need to put the line number directly in the text, you can simply use \texttt{$\backslash$ref\{ prefix tag \}}. 
 Please note that there will be a prefix added to your tag from the other document, which you can change in \texttt{$\backslash$externaldocument[prefix]\{ path to document \}} in \texttt{preamble.tex}.
 
 \lreviewer{Line 50}{}{This doesn't make any sense to me.}
 \label{sec:test}
-Notice that this uses the same macro, \texttt{$\backslash$lreviewer}, but leaves the second output blank.
+Notice that this uses the same macro, \texttt{$\backslash$lreviewer}, but leaves the second input blank.
 
 \section{Reviewer Two}
 
@@ -56,14 +56,14 @@ Notice that this uses the same macro, \texttt{$\backslash$lreviewer}, but leaves
 
 Thank you. We have removed this accordingly. This agrees with Comment \ref{sec:test}.
 
-% \begin{quote}
-% The cat in the box is \DIFdelbegin \DIFdel{dead}\DIFdelend \DIFaddbegin \DIFadd{alive}\DIFaddend .
-% \begin{align}
-% E &= mc^2 \\
-% m\cdot \DIFdelbegin \DIFdel{a=F}\DIFdelend \DIFaddbegin \DIFadd{v=p}\DIFaddend .
-% \end{align}
-% \end{quote}
+\lreviewer{Line 99}{}{Please check Schrodinger's cat.}
 
-% \section{Editor Comments}
+\begin{quote}
+The cat in the box is \DIFdelbegin \DIFdel{dead}\DIFdelend \DIFaddbegin \DIFadd{alive}\DIFaddend .
+\begin{align}
+E &= mc^2 \\
+m\cdot \DIFdelbegin \DIFdel{a=F}\DIFdelend \DIFaddbegin \DIFadd{v=p}\DIFaddend .
+\end{align}
+\end{quote}
 
 \end{document}
