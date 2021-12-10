@@ -121,8 +121,12 @@
 
 \newcommand{\lreviewer}[3]{
   \formatLineTracking{#1}{#2}
-	%\ifcsempty{#2}{\subsubsection{#1}}{\subsubsection{#1 \textrightarrow ~\ref{#2}}}
 	\ebline{#3}
+}
+
+\newcommand{\reviewer}[2]{
+  \subsubsection{#1}
+  \ebline{#2}
 }
 
 % reviewer-letter
